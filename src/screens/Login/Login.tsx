@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
-import { FIREBASE_AUTH } from "/temp/Trabalho-mobile-front/trabalho-mobile/firebaseConfig";
+import { FIREBASE_AUTH } from "../../../firebaseConfig";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigation } from '@react-navigation/native';
 
