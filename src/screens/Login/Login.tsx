@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { FIREBASE_AUTH } from "../../../firebaseConfig";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigation } from '@react-navigation/native';
 
 const Login = () => {
-    const { navigate } = useNavigation();
     
     const [ email, setEmail ] = useState('');
     const [ password, setPassword ] = useState('');
@@ -27,7 +25,6 @@ const Login = () => {
     }
 
     const handleNewAccount = async () => {
-        const { navigate } = useNavigation();
         setLoading(true);
         try {
             const responseCreate = 
@@ -67,7 +64,6 @@ const Login = () => {
                     <TouchableOpacity style={styles.buttonClick} onPress={handleNewAccount}>
                         <Text style={styles.buttonText}>Create account</Text>
                     </TouchableOpacity>
-                    
                 </View>)
             }
         </View>
