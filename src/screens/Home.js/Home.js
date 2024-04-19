@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { searchJogobyname } from "../../services/JogoService";
 import { ActivityIndicator, Button, FlatList, StyleSheet, TextInput, View } from "react-native";
 import JogoList from "../../components/Jogolist/JogoList";
@@ -7,6 +7,10 @@ const Home = ({navigation}) => {
     const [ searchText, setSearchText ] = useState('');
     const [ loading, setLoading ] = useState(false);
     const [ jogos, setJogos ] = useState([]);
+
+    useEffect(()=> {
+        searchJogobyname();
+    },[])
 
     const handleSearchJogo = async () => {
         setLoading(true);

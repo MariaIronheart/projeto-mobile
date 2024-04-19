@@ -4,14 +4,16 @@ import axios from "axios";
 
 const searchJogobyname = async (name) => {
     try {
-        const response = await api.get('jogo');
-        const JogoData = response.data.results();
-        const ListaJogos = await Promise.all(JogoData.map(async (jogo) => {
+        const response = await api.get('/jogos/');
+        const JogoData = response.data.results;
+        console.log('RETORNO DA API:', JogoData);
+        
+        /*const ListaJogos = await Promise.all(JogoData.map(async (jogo) => {
             const res = await axios.get(JogoList);
             return res.data;
             
-        }));
-        
+        }));*/
+
         return ListaJogos;
 
     } catch(error){

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ActivityIndicator, StyleSheet, Text, TextInput, TouchableOpacity, View } from "react-native";
 import { FIREBASE_AUTH } from "../../../firebaseConfig";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import Home from "../Home.js/Home";
 
 const Login = () => {
     
@@ -10,6 +11,10 @@ const Login = () => {
     const [ loading, setLoading ] = useState(false);
 
     const auth = FIREBASE_AUTH;
+
+    useEffect(()=> {
+        Home();
+    },[])
 
     const handleLogin = async () => {
         setLoading(true);
